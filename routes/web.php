@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Models\Movie;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,4 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', 'Guest\PageController@homepage');
+Route::get('/', function () {
+    $movies = Movie::all(); // qui definisci la variabile $movies
+    return view('movies.index')->with('movies', $movies); // qui passi la variabile alla vista
+});
