@@ -15,6 +15,6 @@ use App\Models\Movie;
 */
 
 Route::get('/', function () {
-    $movies = Movie::all(); // qui definisci la variabile $movies
-    return view('movies.index')->with('movies', $movies); // qui passi la variabile alla vista
+    $movies = Movie::all();
+    return view('movies.index')->with('movies', $movies);
 });
