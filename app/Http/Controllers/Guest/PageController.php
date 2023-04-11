@@ -8,9 +8,12 @@ use Illuminate\Http\Request;
 
 class PageController extends Controller
 {
-    public function homepage()
+    public function index()
     {
         $movies = Movie::all();
-        return view('movies.index', ['movies' => $movies]);
+
+        return view('movies')->with('movies', $movies);
+        // oppure
+        // return view('movies', compact('movies'));
     }
 }

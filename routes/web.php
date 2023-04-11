@@ -14,7 +14,4 @@ use App\Models\Movie;
 |
 */
 
-Route::get('/', function () {
-    $movies = Movie::all();
-    return view('movies.index')->with('movies', $movies);
-});
+Route::get('/movies', 'MovieController@index');
